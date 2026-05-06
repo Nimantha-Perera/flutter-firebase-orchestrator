@@ -21,11 +21,13 @@ The agent self-evaluates its generation using a custom algorithm found in `src/m
 - **Completeness (2,000 points):** Validates all 3 layers (Rules, Models, Repo) were successfully generated.
 
 ## 5. Benchmark Comparison
-**Default Cursor Claude:** Gives generic responses. Might generate standard classes instead of `freezed`, and often ignores tight security rules.
-**Our Agent:**
-- **Strict Architecture:** Forces standard `freezed` classes for immutability.
-- **Synchronized Layers:** Ensures that the Security Rules perfectly match the parsing keys expected in the Flutter models.
-- **Quantifiable Output:** Scores itself so the developer knows immediately if the generated logic is production-ready.
+
+| Feature | Default Cursor Claude | Our Orchestrator Agent |
+| :--- | :--- | :--- |
+| **Output Type** | Generic, often standard classes | Strict `freezed` classes for immutability |
+| **Layer Synchronization** | Often ignores tight matching of rules & models | Perfectly synchronizes Security Rules with Flutter Models |
+| **Security Rules** | Basic, sometimes uses `allow read, write: if true;` | Enforces tight security, role-based checks, and auth validation |
+| **Quality Assurance** | No quantifiable metric | Self-evaluates and scores output (1-10,000) for production-readiness |
 
 ## How to Run
 
